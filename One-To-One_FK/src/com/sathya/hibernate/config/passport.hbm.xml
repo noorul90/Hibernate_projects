@@ -1,0 +1,11 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+   <class  name="com.sathya.hibernate.model.Passport" >
+      <id  name="passportNo"  column="pno" />
+      <property  name="expiryDate"  column="expdate"  type="date" />
+      <many-to-one  class="com.sathya.hibernate.model.Person"  name="person"  cascade="all"  column="pid_fk"  unique="true"  not-null="false"  />
+   </class>
+</hibernate-mapping>	

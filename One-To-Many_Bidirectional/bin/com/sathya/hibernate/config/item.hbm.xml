@@ -1,0 +1,12 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class  name="com.sathya.hibernate.model.Item"  table="item_btab">
+        <id  name="itemId"  column="itemid" />
+        <property  name="itemName"  column="itemname"  length="15" />
+        <property  name="price"  column="itemprice" />
+        <many-to-one  class="com.sathya.hibernate.model.Customer"  name="customer"  cascade="all"  column="custid_fk"  lazy="proxy" />
+    </class>
+</hibernate-mapping>

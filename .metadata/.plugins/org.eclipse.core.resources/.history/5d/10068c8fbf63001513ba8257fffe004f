@@ -1,0 +1,72 @@
+package com.ehc.test;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.ehc.pojo.Employee;
+
+public class CacheTest {
+
+	public static void main(String[] args) {
+		
+		SessionFactory factory = new Configuration().configure("com/ehc/common/hibernate.cfg.xml").buildSessionFactory();
+		Session ses1 = factory.openSession();
+		Session ses2 = factory.openSession();
+		Session ses3 = factory.openSession();
+		
+		//read employee object
+		Employee e1 = (Employee)ses1.get(Employee.class, 340);
+		
+		//get the employee name
+		System.out.println(e1.getEmployeeName());
+		
+		//clear the object from session1  level (level-1) cache
+		ses1.clear();
+		
+		System.out.println("session 1 cache is cleared");
+		
+		//read again the same employee object within same session
+		e1 = (Employee)ses1.get(Employee.class, 340);
+		//get  employee name
+		System.out.println(e1.getEmployeeName());
+		
+		System.out.println("============================");
+		
+		try{
+			Thread.sleep(6000);   //thread in sleep mode for 6 seconds
+		}
+		catch(Exception e){
+			
+		}
+		
+		//read the same employee object from diffrent session (session2)
+		Employee e2 = (Employee)ses2.get(Employee.class, 340);
+		//get the employee name from the object
+		System.out.println(e2.getEmployeeName());
+		
+		System.out.println("==============================");
+		
+		try{
+			Thread.sleep(15000);      //thread is sleeping mode for 5 seconds
+		}
+		catch(Exception e){
+			
+		}
+		
+		//read the same employee object again from different session (session3)
+		Employee e3 = (Employee)ses3.get(Employee.class, 340);
+		//get the employee name from object
+		System.out.println(e3.getEmployeeName());
+		
+		//close the all the three session level cache (level-1)
+		ses1.close();
+		ses2.close();
+		ses3.close();
+		
+		//close the  factory level (level-2) cache
+		factory.close();
+
+	}
+
+}

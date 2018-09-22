@@ -1,0 +1,10 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+   <class  name="com.sathya.hibernate.model.Person" >
+        <id  name="personId"  column="pid" />
+        <property  name="personName"  column="pname"  length="12" />
+   </class>
+</hibernate-mapping>	

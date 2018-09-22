@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;hibernate.cfg.xml&apos; to &apos;FilterApp/src&apos;&#x0D;&#x0A;- Original project: &apos;EhCacheApp&apos;&#x0D;&#x0A;- Destination element: &apos;FilterApp/src&apos;&#x0D;&#x0A;- Original element: &apos;hibernate.cfg.xml&apos;" description="Copy file" destination="=FilterApp/src" element1="src/com/ehc/common/hibernate.cfg.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1442773865483" units="0" version="1.0"/>
+</session>

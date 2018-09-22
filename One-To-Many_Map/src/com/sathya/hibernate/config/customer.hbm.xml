@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class  name="com.sathya.hibernate.model.Customer"  table="customer_mtab" >
+       <id name="customerId"  column="custid" />
+       <property  name="customerName"  column="custname"  length="10" />
+       
+       <map  name="items"  cascade="all"  >
+          <key  column="custid_fk" />
+          <map-key  column="mkey"  type="string" />
+          <one-to-many  class="com.sathya.hibernate.model.Item" />
+       </map>
+       
+    </class>      
+</hibernate-mapping>	

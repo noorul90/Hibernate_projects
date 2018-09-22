@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	
+	   <class name="Employee"  table="employee" >
+	      <id name="employeeId"  column="empid"  />
+	      <property  name="employeeName"  column="empname"  type="string"  length="15" />
+	      
+	    <component  name="addr"  class="Address" >
+	      <property  name="hno"  column="hno"  type="string"  length="10" />
+	      <property name="street"  length="10" />
+	      <property name="city"  length="10" />
+	    </component>
+	    
+    </class>  
+	      
+</hibernate-mapping>

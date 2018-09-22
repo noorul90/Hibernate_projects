@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;One-To-One_FK_Annotation&apos; to &apos;One-To-One_PK_Annotation&apos;&#x0D;&#x0A;- Original element: &apos;One-To-One_FK_Annotation&apos;&#x0D;&#x0A;- Renamed element: &apos;One-To-One_FK_Annotation&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;One-To-One_FK_Annotation&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=One-To-One_FK_Annotation" name="One-To-One_PK_Annotation" references="true" stamp="1442261809965" version="1.0"/>
+</session>
